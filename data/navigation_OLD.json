@@ -1,0 +1,49 @@
+{
+  "navigation": [
+    {
+      "label": "Dashboard",
+      "path": "/",
+      "icon": "home",
+      "children": []
+    },
+    {
+      "label": "My Charts",
+      "path": "/",
+      "icon": "home",
+      "children": []
+    },
+    {
+      "label": "My Information",
+      "path": "/",
+      "icon": "home",
+      "children": [
+        {
+          "label": "Web Development",
+          "path": "/services/web-development"
+        },
+        {
+          "label": "Mobile Apps",
+          "path": "/services/mobile-apps"
+        }
+      ]
+    },
+    {
+      "label": "Financial Management",
+      "path": "/",
+      "icon": "home",
+      "children": []
+    },
+    {
+      "label": "Employee Management",
+      "path": "/contact",
+      "icon": "home",
+      "children": []
+    },
+    {
+      "label": "Other Options",
+      "path": "/settings",
+      "icon": "home",
+      "children": []
+    }
+  ]
+}

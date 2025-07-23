@@ -1,0 +1,802 @@
+{
+  "navigation": [
+    {
+      "label": "Dashboard",
+      "path": "index.asp",
+      "icon": "home",
+      "permissions": [],
+      "children": []
+    },
+    {
+      "label": "My Charts",
+      "path": "",
+      "icon": "",
+      "permissions": ["DASHBOARD|", "DASHBOARDMGR|", "METAQUERY|", "MYQUERIES|"],
+      "children": [
+        {
+          "label": "Charts",
+          "path": "?DEST=kcDash",
+          "icon": "",
+          "permissions": ["DASHBOARD|"],
+          "children": []
+        },
+        {
+          "label": "Manage User Dashboards",
+          "path": "?DEST=kcGroup",
+          "icon": "",
+          "permissions": ["DASHBOARDMGR|"],
+          "children": []
+        },
+        {
+          "label": "My Queries",
+          "path": "?DEST=kcMyQ",
+          "icon": "",
+          "permissions": ["MYQUERIES|"],
+          "children": []
+        },
+        {
+          "label": "Meta Queries",
+          "path": "?DEST=kcMeta",
+          "icon": "",
+          "permissions": ["METAQUERY|"],
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "My Information",
+      "path": "",
+      "icon": "",
+      "permissions": ["DEMOGRAPHICS|", "CERTIFICATIONS|", "EDUCATION|", "MEDICAL|", "DEPENDENTS|", "YEARS|", "EVALUATIONS|", "PAYROLL|", "PAYSUMMARY|", "CHECKHISTORY|", "JOBASSIGN|", "DEDUCTIONS|", "DIRECTDEP|", "EMPTAXINFO|", "PAYCALC|", "BENEFITS|", "BESQEVENTS|", "BES|", "LEAVEHISTORY|", "REQUESTLEAVE|", "KEYTIME|", "CLOCKIO|", "ATTACH|", "SUBS|"],
+      "children": [
+        {
+          "label": "Personal Data",
+          "path": "",
+          "icon": "",
+          "permissions": ["DEMOGRAPHICS|", "CERTIFICATIONS|", "EDUCATION|", "MEDICAL|", "DEPENDENTS|", "YEARS|", "EVALUATIONS|"],
+          "children": [
+            {
+              "label": "Demographics",
+              "path": "?DEST=hrPers",
+              "icon": "",
+              "permissions": ["DEMOGRAPHICS|"],
+              "children": []
+            },
+            {
+              "label": "Certifications",
+              "path": "?DEST=hrCert",
+              "icon": "",
+              "permissions": ["CERTIFICATIONS|"],
+              "children": []
+            },
+            {
+              "label": "Education",
+              "path": "?DEST=hrEduc",
+              "icon": "",
+              "permissions": ["EDUCATION|"],
+              "children": []
+            },
+            {
+              "label": "Medical",
+              "path": "?DEST=hrMedi",
+              "icon": "",
+              "permissions": ["MEDICAL|"],
+              "children": []
+            },
+            {
+              "label": "Dependents",
+              "path": "?DEST=hrDepe",
+              "icon": "",
+              "permissions": ["DEPENDENTS|"],
+              "children": []
+            },
+            {
+              "label": "Service Years",
+              "path": "?DEST=hrYear",
+              "icon": "",
+              "permissions": ["YEARS|"],
+              "children": []
+            },
+            {
+              "label": "Personnel Evaluations",
+              "path": "?DEST=hrEval",
+              "icon": "",
+              "permissions": ["EVALUATIONS|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Payroll",
+          "path": "",
+          "icon": "",
+          "permissions": ["PAYROLL|", "PAYSUMMARY|", "CHECKHISTORY|", "JOBASSIGN|", "DEDUCTIONS|", "DIRECTDEP|", "EMPTAXINFO|", "PAYCALC|"],
+          "children": [
+            {
+              "label": "Current Payroll",
+              "path": "?DEST=hrPayH",
+              "icon": "",
+              "permissions": ["PAYROLL|"],
+              "children": []
+            },
+            {
+              "label": "Pay Summary",
+              "path": "?DEST=hrPayS",
+              "icon": "",
+              "permissions": ["PAYSUMMARY|"],
+              "children": []
+            },
+            {
+              "label": "Check History",
+              "path": "?DEST=hrChec",
+              "icon": "",
+              "permissions": ["CHECKHISTORY|"],
+              "children": []
+            },
+            {
+              "label": "Job Assignments",
+              "path": "?DEST=hrJobH",
+              "icon": "",
+              "permissions": ["JOBASSIGN|"],
+              "children": []
+            },
+            {
+              "label": "Deductions",
+              "path": "?DEST=hrDedu",
+              "icon": "",
+              "permissions": ["DEDUCTIONS|"],
+              "children": []
+            },
+            {
+              "label": "Direct Deposit",
+              "path": "?DEST=hrDirD",
+              "icon": "",
+              "permissions": ["DIRECTDEP|"],
+              "children": []
+            },
+            {
+              "label": "Tax Information",
+              "path": "?DEST=hrTaxI",
+              "icon": "",
+              "permissions": ["EMPTAXINFO|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Benefits",
+          "path": "",
+          "icon": "",
+          "permissions": ["BENEFITS|", "BESQEVENTS|", "BES|"],
+          "children": [
+            {
+              "label": "Current Benefits",
+              "path": "?DEST=beCurr",
+              "icon": "",
+              "permissions": ["BENEFITS|"],
+              "children": []
+            },
+            {
+              "label": "Qualifying Events",
+              "path": "?DEST=beEven",
+              "icon": "",
+              "permissions": ["BESQEVENTS|"],
+              "children": []
+            },
+            {
+              "label": "Enrollment",
+              "path": "Session('KeyNetBES')",
+              "icon": "",
+              "permissions": ["BES|"],
+              "children": []
+            },
+            {
+              "label": "Benefit Claims",
+              "path": "?DEST=beClaim",
+              "icon": "",
+              "permissions": ["BENCLAIMS|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Time & Attendance",
+          "path": "",
+          "icon": "",
+          "permissions": ["KEYTIME|", "CLOCKIO|", "LEAVEHISTORY|", "REQUESTLEAVE|"],
+          "children": [
+            {
+              "label": "Enter/Update Time",
+              "path": "?DEST=hrTime",
+              "icon": "",
+              "permissions": ["KEYTIME|", "CLOCKIO|"],
+              "children": []
+            },
+            {
+              "label": "View Leave",
+              "path": "?DEST=hrLHis",
+              "icon": "",
+              "permissions": ["LEAVEHISTORY|", "REQUESTLEAVE|"],
+              "children": []
+            },
+            {
+              "label": "My Calendar",
+              "path": "?DEST=hrTCal",
+              "icon": "",
+              "permissions": ["KEYTIME|", "CLOCKIO|", "LEAVEHISTORY|", "REQUESTLEAVE|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "My Documents",
+          "path": "?DEST=Upload",
+          "icon": "",
+          "permissions": ["ATTACH|"],
+          "children": []
+        },
+        {
+          "label": "Substitutes",
+          "path": "?DEST=hrSubs",
+          "icon": "",
+          "permissions": ["SUBS|"],
+          "children": []
+        },
+        {
+          "label": "Expense Reimbursement",
+          "path": "",
+          "icon": "",
+          "permissions": ["EVENDOR"],
+          "children": [
+            {
+              "label": "Vendor Profile",
+              "path": "Session('KeyNetVen')",
+              "icon": "",
+              "permissions": ["EVENDOR"],
+              "children": []
+            },
+            {
+              "label": "Enter Expense Report",
+              "path": "?DEST=rqPurc&TYPE=VE",
+              "icon": "",
+              "permissions": ["EXPENSEREQ|"],
+              "children": []
+            },
+            {
+              "label": "Finish Saved Expense Rpt",
+              "path": "?DEST=reqIncExp",
+              "icon": "",
+              "permissions": ["EXPENSEREQ|"],
+              "children": []
+            },
+            {
+              "label": "My Expense Reports",
+              "path": "?DEST=rqListExp&TYPE=L",
+              "icon": "",
+              "permissions": ["EXPENSEREQ|"],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Financial Management",
+      "path": "",
+      "icon": "",
+      "permissions": ["REQUISITION|", "INVENTORYREQ|", "VOUCHERREQ|", "TEACHERREQ|", "REQUISITIONLIST|", "REQUISITIONLISTALL|", "REQUISITIONAPPROVAL|", "GLACCOUNTINQ|", "BUDGET|", "CASHRECEIPTS|", "CRSEARCH|", "FINRPT|", "PORECEIVE|", "VENDOR|", "WOENTRY|", "WOREQUESTOR|", "WOAPPROVAL|", "WOSTATUS|", "WOSEARCH|", "BIDREQ|"],
+      "children": [
+        {
+          "label": "Enter Request",
+          "path": "",
+          "icon": "",
+          "permissions": ["REQUISITION|", "INVENTORYREQ|", "VOUCHERREQ|", "TEACHERREQ|", "BIDREQ|"],
+          "children": [
+            {
+              "label": "Finish Saved Requisition",
+              "path": "?DEST=reqIncomplete",
+              "icon": "",
+              "permissions": ["REQUISITION|", "INVENTORYREQ|", "VOUCHERREQ|", "TEACHERREQ|", "BUDGET|"],
+              "children": []
+            },
+            {
+              "label": "Purchase Requisition",
+              "path": "?DEST=rqPurc&TYPE=P",
+              "icon": "",
+              "permissions": ["REQUISITION|"],
+              "children": []
+            },
+            {
+              "label": "Inventory Requisition",
+              "path": "?DEST=rqPurc&TYPE=S",
+              "icon": "",
+              "permissions": ["INVENTORYREQ|"],
+              "children": []
+            },
+            {
+              "label": "Voucher Requisition",
+              "path": "?DEST=rqPurc&TYPE=V",
+              "icon": "",
+              "permissions": ["VOUCHERREQ|"],
+              "children": []
+            },
+            {
+              "label": "Teacher's Requisition",
+              "path": "?DEST=rqPurc&TYPE=T",
+              "icon": "",
+              "permissions": ["TEACHERREQ|"],
+              "children": []
+            },
+            {
+              "label": "Bidding Requisition",
+              "path": "?DEST=rqPurc&TYPE=B",
+              "icon": "",
+              "permissions": ["BIDREQ|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Requisitions",
+          "path": "",
+          "icon": "",
+          "permissions": ["REQUISITIONLIST|", "REQUISITIONLISTALL|", "REQUISITIONAPPROVAL|"],
+          "children": [
+            {
+              "label": "Approve Requisitions",
+              "path": "?DEST=rqAppr",
+              "icon": "",
+              "permissions": ["REQUISITIONAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "My Requisitions",
+              "path": "?DEST=rqList&TYPE=L",
+              "icon": "",
+              "permissions": ["REQUISITIONLIST|"],
+              "children": []
+            },
+            {
+              "label": "Search Requisitions",
+              "path": "?DEST=rqList&TYPE=S",
+              "icon": "",
+              "permissions": ["REQUISITIONLISTALL|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Account Inquiry",
+          "path": "?DEST=rqAcct",
+          "icon": "",
+          "permissions": ["GLACCOUNTINQ|"],
+          "children": []
+        },
+        {
+          "label": "Budget Entry",
+          "path": "?DEST=rqBudg",
+          "icon": "",
+          "permissions": ["BUDGET|"],
+          "children": []
+        },
+        {
+          "label": "Cash Receipts",
+          "path": "",
+          "icon": "",
+          "permissions": ["CASHRECEIPTS|", "CRSEARCH|"],
+          "children": [
+            {
+              "label": "My Receipts",
+              "path": "?DEST=crList&TYPE=L",
+              "icon": "",
+              "permissions": ["CASHRECEIPTS|"],
+              "children": []
+            },
+            {
+              "label": "Search Receipts",
+              "path": "?DEST=crList&TYPE=S",
+              "icon": "",
+              "permissions": ["CRSEARCH|"],
+              "children": []
+            },
+            {
+              "label": "Teller Report",
+              "path": "?DEST=crSave",
+              "icon": "",
+              "permissions": ["CASHRECEIPTS|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Financial Reports",
+          "path": "?DEST=rqFinR",
+          "icon": "",
+          "permissions": ["FINRPT|"],
+          "children": []
+        },
+        {
+          "label": "Activity Reports",
+          "path": "?DEST=rqSAct",
+          "icon": "",
+          "permissions": ["ACTIVITYRPT|"],
+          "children": []
+        },
+        {
+          "label": "Receiving",
+          "path": "?DEST=rqPORe",
+          "icon": "",
+          "permissions": ["PORECEIVE|"],
+          "children": []
+        },
+        {
+          "label": "Vendor Inquiry",
+          "path": "",
+          "icon": "",
+          "permissions": ["VENDOR|"],
+          "children": [
+            {
+              "label": "Profiles",
+              "path": "?DEST=veProf",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            },
+            {
+              "label": "Requisitions",
+              "path": "?DEST=veRequ",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            },
+            {
+              "label": "Purchase Orders",
+              "path": "?DEST=vePurc",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            },
+            {
+              "label": "Invoices",
+              "path": "?DEST=veInvo",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            },
+            {
+              "label": "Payments",
+              "path": "?DEST=vePaym",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            },
+            {
+              "label": "Bids",
+              "path": "?DEST=veBid",
+              "icon": "",
+              "permissions": ["VENDOR|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Work Orders",
+          "path": "",
+          "icon": "",
+          "permissions": ["WOENTRY|", "WOREQUESTOR|", "WOAPPROVAL|", "WOSTATUS|", "WOSEARCH|"],
+          "children": [
+            {
+              "label": "Enter Work Order",
+              "path": "?DEST=rqWOEn",
+              "icon": "",
+              "permissions": ["WOENTRY|"],
+              "children": []
+            },
+            {
+              "label": "My Work Orders",
+              "path": "?DEST=rqWork",
+              "icon": "",
+              "permissions": ["WOREQUESTOR|"],
+              "children": []
+            },
+            {
+              "label": "Manage Work Orders",
+              "path": "?DEST=rqWOMa",
+              "icon": "",
+              "permissions": ["WOAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "Work Order Status",
+              "path": "?DEST=rqWOSt",
+              "icon": "",
+              "permissions": ["WOSTATUS|"],
+              "children": []
+            },
+            {
+              "label": "Search Work Orders",
+              "path": "?DEST=rqWOSe",
+              "icon": "",
+              "permissions": ["WOSEARCH|"],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Employee Management",
+      "path": "",
+      "icon": "",
+      "permissions": ["LEAVEREQAPPROVAL|", "LEAVECAL|", "WORKCAL|", "LEAVELIST|", "BESMGR|", "BESENR|", "KEYTIMELIST|", "PTTE|", "JOBREQ|", "JOBREQAPPROVAL|", "JOBENTRY|", "JOBMANENTRY|", "APPMGR|", "APPMGRFULL|", "JOBMGR|", "JOBANNREQ|", "MANAGER|", "MANAGERFULL|", "MANAGERLESS|", "MANAGERMORE|", "TRAPPROVAL|", "KEYTIMEAPPROVAL|"],
+      "children": [
+        {
+          "label": "Attendance",
+          "path": "",
+          "icon": "",
+          "permissions": ["LEAVEREQAPPROVAL|", "LEAVECAL|", "LEAVELIST|"],
+          "children": [
+            {
+              "label": "Approve Leave",
+              "path": "?DEST=emLApp",
+              "icon": "",
+              "permissions": ["LEAVEREQAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "Lookup Employee Leave",
+              "path": "?DEST=emLLis",
+              "icon": "",
+              "permissions": ["LEAVELIST|"],
+              "children": []
+            },
+            {
+              "label": "Leave Calendar",
+              "path": "?DEST=emLCal",
+              "icon": "",
+              "permissions": ["LEAVECAL|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Employee Time",
+          "path": "",
+          "icon": "",
+          "permissions": ["KEYTIMELIST|", "PTTE|", "WORKCAL|", "KEYTIMEAPPROVAL|"],
+          "children": [
+            {
+              "label": "Approve Timesheets",
+              "path": "?DEST=emTApp",
+              "icon": "",
+              "permissions": ["KEYTIMEAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "Approve PTTE",
+              "path": "?DEST=emPApp",
+              "icon": "",
+              "permissions": ["PTTEAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "My Entries",
+              "path": "?DEST=emTime",
+              "icon": "",
+              "permissions": ["KEYTIMELIST|", "PTTE|"],
+              "children": []
+            },
+            {
+              "label": "Enter Timesheets",
+              "path": "?DEST=emRemT",
+              "icon": "",
+              "permissions": ["KEYTIMELIST|"],
+              "children": []
+            },
+            {
+              "label": "Enter PTTE",
+              "path": "?DEST=emRemP",
+              "icon": "",
+              "permissions": ["PTTE|"],
+              "children": []
+            },
+            {
+              "label": "Work Calendar",
+              "path": "?DEST=emTCal",
+              "icon": "",
+              "permissions": ["WORKCAL|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Job Requisitions",
+          "path": "",
+          "icon": "",
+          "permissions": ["JOBREQ|", "JOBREQALL|", "JOBREQAPPROVAL|", "JOBENTRY|", "JOBMANENTRY|"],
+          "children": [
+            {
+              "label": "Finish Saved Requisition",
+              "path": "?DEST=rqIJob",
+              "icon": "",
+              "permissions": ["JOBREQ|", "JOBREQALL|"],
+              "children": []
+            },
+            {
+              "label": "Enter Requisition",
+              "path": "?DEST=rqJob",
+              "icon": "",
+              "permissions": ["JOBREQ|", "JOBREQALL|"],
+              "children": []
+            },
+            {
+              "label": "My Job Requisitions",
+              "path": "?DEST=rqJList&TYPE=L",
+              "icon": "",
+              "permissions": ["JOBREQ|", "JOBREQALL|"],
+              "children": []
+            },
+            {
+              "label": "Search Job Requisitions",
+              "path": "?DEST=rqJList&TYPE=S",
+              "icon": "",
+              "permissions": ["JOBREQALL|"],
+              "children": []
+            },
+            {
+              "label": "Job Requisition Inquiry",
+              "path": "?DEST=jrSearch",
+              "icon": "",
+              "permissions": ["JOBREQ|", "JOBREQALL|"],
+              "children": []
+            },
+            {
+              "label": "Approve Requisition",
+              "path": "?DEST=rqJApp",
+              "icon": "",
+              "permissions": ["JOBREQAPPROVAL|"],
+              "children": []
+            },
+            {
+              "label": "Enter Job Timesheet",
+              "path": "?DEST=rqJEnt",
+              "icon": "",
+              "permissions": ["JOBENTRY|", "JOBMANENTRY|"],
+              "children": []
+            },
+            {
+              "label": "Approve Timesheets",
+              "path": "?DEST=rqTApp",
+              "icon": "",
+              "permissions": ["JOBENTRY|", "JOBMANENTRY|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Manage Benefits",
+          "path": "?DEST=emBene",
+          "icon": "",
+          "permissions": ["BESMGR|", "BESENR|"],
+          "children": []
+        },
+        {
+          "label": "Personnel",
+          "path": "",
+          "icon": "",
+          "permissions": ["APPMGR|", "APPMGRFULL|", "JOBMGR|", "JOBANNREQ|", "MANAGER|", "MANAGERFULL|", "MANAGERLESS|", "MANAGERMORE|"],
+          "children": [
+            {
+              "label": "Manage Applicants",
+              "path": "?DEST=emAppM",
+              "icon": "",
+              "permissions": ["APPMGR|", "APPMGRFULL|"],
+              "children": []
+            },
+            {
+              "label": "Position Requests",
+              "path": "?DEST=emJobM",
+              "icon": "",
+              "permissions": ["JOBANNREQ|"],
+              "children": []
+            },
+            {
+              "label": "View Staff Data",
+              "path": "?DEST=emMgr",
+              "icon": "",
+              "permissions": ["MANAGER|", "MANAGERFULL|", "MANAGERLESS|", "MANAGERMORE|"],
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Course Approval",
+          "path": "?DEST=emTuiA",
+          "icon": "",
+          "permissions": ["TRAPPROVAL|"],
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "Other Options",
+      "path": "",
+      "icon": "",
+      "permissions": ["ORGDIRECTORY|", "JOBPOSTINGS|", "BRANDINGSTYLING|", "ADMIN|"],
+      "children": [
+        {
+          "label": "Personnel Directory",
+          "path": "?DEST=emDir",
+          "icon": "",
+          "permissions": ["ORGDIRECTORY|"],
+          "children": []
+        },
+        {
+          "label": "Job Postings",
+          "path": "?DEST=hrJobs",
+          "icon": "",
+          "permissions": ["JOBPOSTINGS|"],
+          "children": []
+        },
+        {
+          "label": "Administration",
+          "path": "",
+          "icon": "",
+          "permissions": ["ADMIN|"],
+          "children": [
+            {
+              "label": "User Setup",
+              "path": "?DEST=emKeyNet",
+              "icon": "",
+              "permissions": ["ADMIN|"],
+              "children": []
+            },
+            {
+              "label": "KeyNet Setup",
+              "path": "?DEST=KeySetup",
+              "icon": "",
+              "permissions": ["ADMIN|"],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Frontline Absence & Time",
+      "path": "https://login.frontlineeducation.com/login?productId=ABSMGMT&clientId=ABSMGMT#/login",
+      "icon": "Clock",
+      "permissions": ["AESOP"],
+      "children": []
+    },
+    {
+      "label": "Settings",
+      "path": "",
+      "icon": "settings",
+      "permissions": [],
+      "children": []
+    },
+    {
+      "label": "Logout",
+      "path": "",
+      "icon": "Door",
+      "permissions": [],
+      "children": [
+        {
+          "label": "Lock Screen",
+          "path": "lock_Account.asp?account=lock",
+          "icon": "Lock",
+          "permissions": [],
+          "children": []
+        },
+        {
+          "label": "Log Off",
+          "path": "Logout.asp",
+          "icon": "Logoff",
+          "permissions": [],
+          "children": []
+        }
+      ]
+    }
+  ]
+} 
