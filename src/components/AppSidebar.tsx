@@ -12,6 +12,7 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar"
 import navData from "../../data/navigation.json"
+import sessionData from "../../data/config/session.json"
 import { ChevronUp, Link, User2 } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import {Home, Inbox, Settings, User} from "lucide-react"
@@ -20,6 +21,7 @@ import {Home, Inbox, Settings, User} from "lucide-react"
 
 
 export default function AppSidebar() {
+    const filterNavigation = navData.navigation.filter((item) => item.permissions.some(role => sessionData.userData[0].permissions.includes(role)))
     const iconMap = {
         home: <Home className="h-[1rem] w-[1rem] me-2" />,
         inbox: <Inbox />,
@@ -46,7 +48,7 @@ export default function AppSidebar() {
                     <SidebarGroupLabel>Navigation</SidebarGroupLabel>
                     <SidebarGroupContent>
                          <SidebarMenu>
-                            {navData.navigation.map((item) => (
+                            {filterNavigation.map((item) => (
                                 <SidebarMenuItem key={item.label}>
                                     <SidebarMenuButton asChild >
                                         <a href={item.path}>
