@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import sessionData from "../../data/config/session.json"
 import { Button } from "./ui/button";
 import { useTheme } from "@/components/providers/ThemeProvider"
 import { SidebarTrigger, useSidebar } from "./ui/sidebar";
@@ -44,8 +45,8 @@ export default function Navbar(){
                     </DropdownMenu>
                 <DropdownMenu>
                     <DropdownMenuTrigger>
-                    <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
+                    <Avatar className="border">
+                        <AvatarImage src={sessionData.userData[0].profilePicture} />
                         <AvatarFallback>MK</AvatarFallback>
                     </Avatar>
                     </DropdownMenuTrigger>

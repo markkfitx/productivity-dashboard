@@ -21,7 +21,7 @@ export default function Breadcrumbs() {
                             <SlashIcon />
                         </BreadcrumbSeparator>
                         <BreadcrumbItem>
-                        <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
+                        <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator>
                             <SlashIcon />
