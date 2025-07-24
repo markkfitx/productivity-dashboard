@@ -10,24 +10,28 @@ import { SlashIcon } from "lucide-react"
 
 export default function Breadcrumbs() {
     return (
-        <Breadcrumb>
-        <BreadcrumbList>
-            <BreadcrumbItem>
-            <BreadcrumbLink href="/">KeyNet</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-                <SlashIcon />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-            <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator>
-                <SlashIcon />
-            </BreadcrumbSeparator>
-            <BreadcrumbItem>
-            <BreadcrumbPage>Current Page</BreadcrumbPage>
-            </BreadcrumbItem>
-        </BreadcrumbList>
-        </Breadcrumb>
+        <div className="row row-cols-1 pb-5">
+            <div className="col">
+                <Breadcrumb>
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                        <BreadcrumbLink href="/">KeyNet</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                            <SlashIcon />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                        <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator>
+                            <SlashIcon />
+                        </BreadcrumbSeparator>
+                        <BreadcrumbItem>
+                        <BreadcrumbPage>Current Page</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
+            </div>
+        </div>
     )
     }

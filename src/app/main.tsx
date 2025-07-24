@@ -1,5 +1,6 @@
 import ChartAreaGradient from "@/components/Charts/chart-area-gradient";
 import ChartTooltipAdvanced from "@/components/Charts/chart-tooltip-advanced";
+import ChartAreaInteractive from "@/components/Charts/chart-area-interactive";
 import Calendar from "@/components/Calendar-widget";
 import Breadcrumbs from "@/components/breadcrumbs";
 import GridBox from "@/components/Containers/grid-box";
@@ -27,15 +28,22 @@ async function getData(): Promise<Payment[]> {
 export default function Main() {
     const data = getData()
     return (
-        <div className="grid grid-col-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
-            <div className="col-span-2 lg:col-span-3 2xl:col-span-4 pb-2"><Breadcrumbs /></div>
-            <GridBox style="lg:col-span-2"></GridBox>
-            <ChartAreaGradient />
+      <>
+        <Breadcrumbs />
+        <div className="grid grid-col-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <GridBox style=""></GridBox>
+            <GridBox style=""></GridBox>
+            <GridBox style=""></GridBox>
+            <GridBox style=""></GridBox>
+            <ChartAreaInteractive style="col-span-2 md:col-span-3 lg:col-span-4"/>
+            <GridBox style="lg:col-span-4"></GridBox>
+            
             <GridBox style=""></GridBox>
             <GridBox style="lg:row-span-2"></GridBox>
             <GridBox style="lg:row-span-2"></GridBox>
             <ChartTooltipAdvanced/>
             <GridBox style="col-span-2 lg:col-span-3 2xl:col-span-4 pb-2">{/*<DataTable columns={columns} data={data}/>*/}</GridBox>
         </div>
+        </>
     );
 };

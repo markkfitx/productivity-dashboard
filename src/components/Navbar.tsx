@@ -11,7 +11,6 @@ import {
 import { Button } from "./ui/button";
 import { useTheme } from "@/components/providers/ThemeProvider"
 import { SidebarTrigger, useSidebar } from "./ui/sidebar";
-import { Link } from "react-router";
 
 export default function Navbar(){
     const { setTheme } = useTheme();
@@ -53,7 +52,7 @@ export default function Navbar(){
                     <DropdownMenuContent sideOffset={10}>
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem><User className="h-[1.2rem] w-[1.2rem] mr-2"/><Link to="?DEST=profile">Profile</Link></DropdownMenuItem>
+                        <DropdownMenuItem><User className="h-[1.2rem] w-[1.2rem] mr-2"/><a href="/profile">Profile</a></DropdownMenuItem>
                         <DropdownMenuItem><Settings className="h-[1.2rem] w-[1.2rem] mr-2"/>Settings</DropdownMenuItem>
                         <DropdownMenuItem variant="destructive"><LogOut className="h-[1.2rem] w-[1.2rem] mr-2" />Logout</DropdownMenuItem>
                     </DropdownMenuContent>

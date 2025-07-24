@@ -23,7 +23,6 @@ import sessionData from "../../data/config/session.json"
 import { ChevronUp, User2 } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import {Home, Inbox, ShoppingBag, FileText, IdCardLanyard, ClipboardList, Settings, User} from "lucide-react"
-import { Link } from "react-router"
 
 
 
@@ -46,10 +45,10 @@ export default function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem >
                         <SidebarMenuButton asChild className="p-0">
-                            <Link to="/" className="flex items-center gap-2 p-0">
+                            <a href="/" className="flex items-center gap-2 p-0">
                                 <img src="https://github.com/shadcn.png" className="w-[1rem] h-1rem]"/>
                                 <span className="text-lg font-semibold">KEYNET</span>
-                            </Link>
+                            </a>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -93,10 +92,10 @@ export default function AppSidebar() {
                                                                         subItem.children.filter((y) => y.permissions.length === 0 || y.permissions.some(role =>sessionData.userData[0].permissions.includes(role))).map((subSubItem) => (
                                                                             <SidebarMenuItem key={subSubItem.label}>
                                                                                 <SidebarMenuButton asChild>
-                                                                                    <Link to={subSubItem.path}>
+                                                                                    <a href={subSubItem.path}>
                                                                                         {subSubItem.icon && iconMap[subSubItem.icon as keyof typeof iconMap]}
                                                                                         <span>{subSubItem.label}</span>
-                                                                                    </Link>
+                                                                                    </a>
                                                                                 </SidebarMenuButton>
                                                                             </SidebarMenuItem>
                                                                         ))}
@@ -106,10 +105,10 @@ export default function AppSidebar() {
                                                                    
                                                             ) :(
                                                             <SidebarMenuButton asChild>
-                                                                <Link to={subItem.path}>
+                                                                <a href={subItem.path}>
                                                                     {subItem.icon && iconMap[subItem.icon as keyof typeof iconMap]}
                                                                     <span>{subItem.label}</span>
-                                                                </Link>
+                                                                </a>
                                                             </SidebarMenuButton>
                                                             )}
                                                         </SidebarMenuSubItem>
@@ -122,10 +121,10 @@ export default function AppSidebar() {
                                     <SidebarMenuItem key={item.label}>
                                         <SidebarMenuButton asChild >
                                             
-                                            <Link to={item.path}>
+                                            <a href={item.path}>
                                                 {item.icon && iconMap[item.icon as keyof typeof iconMap]}
                                                 <span>{item.label}</span>
-                                            </Link>
+                                            </a>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 )

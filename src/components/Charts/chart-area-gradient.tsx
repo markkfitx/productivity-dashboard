@@ -19,7 +19,9 @@ import {
 } from "@/components/ui/chart"
 
 export const description = "An area chart with gradient fill"
-
+interface ChartAreaGradientProps {
+  style?: string; // extra class names as a string
+}
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
@@ -40,9 +42,9 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export default function ChartAreaGradient() {
+export default function ChartAreaGradient({ style }: ChartAreaGradientProps) {
   return (
-    <Card className="shadow-none bg-primary-foreground">
+    <Card className={`shadow-none bg-primary-foreground ${style ?? ""}`}>
       <CardHeader>
         <CardTitle>Area Chart - Gradient</CardTitle>
         <CardDescription>
