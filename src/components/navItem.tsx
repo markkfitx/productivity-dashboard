@@ -1,5 +1,5 @@
 import type { JSX, ReactElement } from "react"
-import {Home, Inbox, Settings, User} from "lucide-react"
+import {Home, ShoppingBag, Inbox, Settings, User} from "lucide-react"
 import { useSidebar } from "@/components/ui/sidebar"
 
 type NavItemProps = {
@@ -13,7 +13,8 @@ const iconMap = {
   home: <Home className="h-[1rem] w-[1rem] me-2" />,
   inbox: <Inbox />,
   settings: <Settings />,
-  user: <User />
+  user: <User />,
+  shoppingBag: <ShoppingBag />
 };
 
 const NavItem = ({ label, path, icon, active }: NavItemProps) => {

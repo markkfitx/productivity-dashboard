@@ -13,7 +13,7 @@ export default function Breadcrumbs() {
         <Breadcrumb>
         <BreadcrumbList>
             <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <BreadcrumbLink href="/">KeyNet</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
                 <SlashIcon />

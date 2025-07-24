@@ -24,7 +24,7 @@ async function getData(): Promise<Payment[]> {
     // ...
   ]
 }
-export default  function Content() {
+export default function Main() {
     const data = getData()
     return (
         <div className="grid grid-col-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
@@ -35,7 +35,7 @@ export default  function Content() {
             <GridBox style="lg:row-span-2"></GridBox>
             <GridBox style="lg:row-span-2"></GridBox>
             <ChartTooltipAdvanced/>
-            <GridBox style="col-span-2 lg:col-span-3 2xl:col-span-4 pb-2"><DataTable columns={columns} data={data}/></GridBox>
+            <GridBox style="col-span-2 lg:col-span-3 2xl:col-span-4 pb-2">{/*<DataTable columns={columns} data={data}/>*/}</GridBox>
         </div>
     );
 };

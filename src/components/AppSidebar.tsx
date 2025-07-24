@@ -9,24 +9,36 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import navData from "../../data/navigation.json"
 import sessionData from "../../data/config/session.json"
-import { ChevronUp, Link, User2 } from "lucide-react"
+import { ChevronUp, User2 } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
-import {Home, Inbox, Settings, User} from "lucide-react"
+import {Home, Inbox, ShoppingBag, FileText, IdCardLanyard, ClipboardList, Settings, User} from "lucide-react"
+import { Link } from "react-router"
 
 
 
 
 export default function AppSidebar() {
-    const filterNavigation = navData.navigation.filter((item) => item.permissions.some(role => sessionData.userData[0].permissions.includes(role)))
+    const filterNavigation = navData.navigation.filter((item) => item.permissions.length === 0 || item.permissions.some(role => sessionData.userData[0].permissions.includes(role)))
     const iconMap = {
         home: <Home className="h-[1rem] w-[1rem] me-2" />,
-        inbox: <Inbox />,
-        settings: <Settings />,
-        user: <User />
+        inbox: <Inbox className="h-[1rem] w-[1rem] me-2" />,
+        settings: <Settings className="h-[1rem] w-[1rem] me-2" />,
+        user: <User className="h-[1rem] w-[1rem] me-2" />,
+        shoppingBag: <ShoppingBag className="h-[1rem] w-[1rem] me-2" />,
+        fileText: <FileText className="h-[1rem] w-[1rem] me-2" />,
+        idCardLanyard: <IdCardLanyard className="h-[1rem] w-[1rem] me-2" />,
+        clipboardList: <ClipboardList className="h-[1rem] w-[1rem] me-2" />
     };
     return (
         <Sidebar collapsible="icon" side="left" className="w-[250px]">
@@ -34,10 +46,10 @@ export default function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem >
                         <SidebarMenuButton asChild className="p-0">
-                            <a href="/" className="flex items-center gap-2 p-0">
+                            <Link to="/" className="flex items-center gap-2 p-0">
                                 <img src="https://github.com/shadcn.png" className="w-[1rem] h-1rem]"/>
-                                <span className="text-lg font-semibold">Mark Kirby</span>
-                            </a>
+                                <span className="text-lg font-semibold">KEYNET</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -49,14 +61,51 @@ export default function AppSidebar() {
                     <SidebarGroupContent>
                          <SidebarMenu>
                             {filterNavigation.map((item) => (
-                                <SidebarMenuItem key={item.label}>
-                                    <SidebarMenuButton asChild >
-                                        <a href={item.path}>
-                                            {item.icon && iconMap[item.icon as keyof typeof iconMap]}
-                                            <span>{item.label}</span>
-                                        </a>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
+                                item.children && item.children.length > 0 ? (
+                                    <Collapsible className="group/collapsible">
+                                        <CollapsibleTrigger asChild>
+                                            <SidebarMenuButton>
+                                                {item.icon && iconMap[item.icon as keyof typeof iconMap]}
+                                                <span>{item.label}</span>
+                                            </SidebarMenuButton>
+                                        </CollapsibleTrigger>
+                                        <CollapsibleContent>
+                                            <SidebarMenu>
+                                                {
+                                                item.children.filter((x) => x.permissions.length === 0 || x.permissions.some(role => sessionData.userData[0].permissions.includes(role))).map((subItem,) => (
+                                                    <SidebarMenuSub key={subItem.label}>
+                                                        <SidebarMenuSubItem>
+                                                            <SidebarMenuButton asChild>
+                                                                <Link to={subItem.path}>
+                                                                    {subItem.icon && iconMap[subItem.icon as keyof typeof iconMap]}
+                                                                    <span>{subItem.label}</span>
+                                                                </Link>
+                                                            </SidebarMenuButton>
+                                                        </SidebarMenuSubItem>
+                                                    </SidebarMenuSub>
+                                                ))}
+                                                <SidebarMenuItem>
+                                                    <SidebarMenuButton asChild >
+                                                        <Link to="/" key={item.label}>
+                                                            {item.icon && iconMap[item.icon as keyof typeof iconMap]}
+                                                            <span>{item.label}</span>
+                                                        </Link>
+                                                    </SidebarMenuButton>
+                                                </SidebarMenuItem>
+                                            </SidebarMenu>
+                                        </CollapsibleContent>
+                                    </Collapsible>
+                                ) : (
+                                    <SidebarMenuItem key={item.label}>
+                                        <SidebarMenuButton asChild >
+                                            
+                                            <Link to={item.path}>
+                                                {item.icon && iconMap[item.icon as keyof typeof iconMap]}
+                                                <span>{item.label}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                )
                             ))}
                          </SidebarMenu>
                     </SidebarGroupContent>

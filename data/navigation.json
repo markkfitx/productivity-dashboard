@@ -46,7 +46,7 @@
     {
       "label": "My Information",
       "path": "",
-      "icon": "",
+      "icon": "fileText",
       "permissions": ["DEMOGRAPHICS|", "CERTIFICATIONS|", "EDUCATION|", "MEDICAL|", "DEPENDENTS|", "YEARS|", "EVALUATIONS|", "PAYROLL|", "PAYSUMMARY|", "CHECKHISTORY|", "JOBASSIGN|", "DEDUCTIONS|", "DIRECTDEP|", "EMPTAXINFO|", "PAYCALC|", "BENEFITS|", "BESQEVENTS|", "BES|", "LEAVEHISTORY|", "REQUESTLEAVE|", "KEYTIME|", "CLOCKIO|", "ATTACH|", "SUBS|"],
       "children": [
         {
@@ -283,7 +283,7 @@
     {
       "label": "Financial Management",
       "path": "",
-      "icon": "",
+      "icon": "shoppingBag",
       "permissions": ["REQUISITION|", "INVENTORYREQ|", "VOUCHERREQ|", "TEACHERREQ|", "REQUISITIONLIST|", "REQUISITIONLISTALL|", "REQUISITIONAPPROVAL|", "GLACCOUNTINQ|", "BUDGET|", "CASHRECEIPTS|", "CRSEARCH|", "FINRPT|", "PORECEIVE|", "VENDOR|", "WOENTRY|", "WOREQUESTOR|", "WOAPPROVAL|", "WOSTATUS|", "WOSEARCH|", "BIDREQ|"],
       "children": [
         {
@@ -527,7 +527,7 @@
     {
       "label": "Employee Management",
       "path": "",
-      "icon": "",
+      "icon": "idCardLanyard",
       "permissions": ["LEAVEREQAPPROVAL|", "LEAVECAL|", "WORKCAL|", "LEAVELIST|", "BESMGR|", "BESENR|", "KEYTIMELIST|", "PTTE|", "JOBREQ|", "JOBREQAPPROVAL|", "JOBENTRY|", "JOBMANENTRY|", "APPMGR|", "APPMGRFULL|", "JOBMGR|", "JOBANNREQ|", "MANAGER|", "MANAGERFULL|", "MANAGERLESS|", "MANAGERMORE|", "TRAPPROVAL|", "KEYTIMEAPPROVAL|"],
       "children": [
         {
@@ -721,7 +721,7 @@
     {
       "label": "Other Options",
       "path": "",
-      "icon": "",
+      "icon": "clipboardList",
       "permissions": ["ORGDIRECTORY|", "JOBPOSTINGS|", "BRANDINGSTYLING|", "ADMIN|"],
       "children": [
         {
@@ -775,28 +775,6 @@
       "icon": "settings",
       "permissions": [],
       "children": []
-    },
-    {
-      "label": "Logout",
-      "path": "",
-      "icon": "Door",
-      "permissions": [],
-      "children": [
-        {
-          "label": "Lock Screen",
-          "path": "lock_Account.asp?account=lock",
-          "icon": "Lock",
-          "permissions": [],
-          "children": []
-        },
-        {
-          "label": "Log Off",
-          "path": "Logout.asp",
-          "icon": "Logoff",
-          "permissions": [],
-          "children": []
-        }
-      ]
     }
   ]
 } 
